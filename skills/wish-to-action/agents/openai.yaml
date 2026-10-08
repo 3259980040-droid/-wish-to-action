@@ -1,0 +1,6 @@
+interface:
+  display_name: "愿望到行动（实验版）"
+  short_description: "补齐模糊目标，主动研究可行路径，在推进任务时帮助理解必要知识"
+  default_prompt: "使用 $wish-to-action 帮我把想法推进到可判断、可执行的下一步，并解释当前需要理解的知识。"
+policy:
+  allow_implicit_invocation: true
