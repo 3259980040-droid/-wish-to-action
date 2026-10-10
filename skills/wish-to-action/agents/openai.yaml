@@ -1,5 +1,5 @@
 interface:
-  display_name: "愿望到行动（实验版）"
+  display_name: "这个想法怎么做（实验版）"
   short_description: "探索模糊项目与工具构想，主动调查成熟方案，补足领域认识并推进下一步"
   default_prompt: "使用 $wish-to-action 研究我的项目想法、寻找可复用方案，解释必要知识并推进可判断的下一步。"
 policy:
