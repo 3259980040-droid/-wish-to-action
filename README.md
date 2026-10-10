@@ -2,7 +2,7 @@
 
 帮助 Agent 把“我想做一个……”推进成可判断、可执行的下一步，并在过程中补充初学者需要的知识。
 
-**实验版：0.2.0-experimental。** 面向 Codex 和 DeepSeek Harness（dsh）的中文 Agent Skill。它是一套协作方法，不是独立应用，也不提供模型、搜索服务或 MCP 连接。
+**实验版：0.3.0-experimental。** 面向 Codex 和 DeepSeek Harness（dsh）的中文 Agent Skill。它是一套协作方法，不是独立应用，也不提供模型、搜索服务或 MCP 连接。
 
 > 用户表达的是目标，往往还不知道完整规格。Agent 应主动研究、寻找成熟资源、补足必要缺口，而不是把所有未知都变成问卷。
 
@@ -29,7 +29,7 @@
 
 ## 安装
 
-可安装的完整目录是 [`skills/wish-to-action`](skills/wish-to-action)，不要只复制 `SKILL.md`，两份参考文件也需要保留。
+可安装的完整目录是 [`skills/wish-to-action`](skills/wish-to-action)，不要只复制 `SKILL.md`，五份参考文件也需要保留。
 
 ### Codex
 
@@ -85,11 +85,17 @@ skills/wish-to-action，作为我的用户级技能。
 
 首次应用后，技能要求模型在最终回复保留：
 
-> 本次使用：愿望到行动 · 0.2.0-experimental（已读取技能正文）。
+> 本次使用：愿望到行动 · 0.3.0-experimental（已读取技能正文）。
 
 这行是便于观察的模型说明，**不是系统级证明**。可靠证据是实际正文注入或工具读取记录。dsh 的显式调用可能由宿主直接注入正文，因此没有额外 `skill` 工具调用不一定表示没加载。
 
 若要排查，可问：“请说明本轮实际读取的技能名称、版本和来源；没有读到就明确说没有。”核对记录后再下结论。
+
+## 0.3 本地试验状态
+
+新增领域引导、判断正反例、能力资源索引，并明确先调查同类成品及组件再推荐自建架构。已完成结构、相对链接、配置与文件一致性检查。
+
+已有五轮长对话观察：用户未点名技能，工具记录均显示读取 0.3 正文，并按需读取参考、开展相关研究。这些对话有旧版调用历史，不能作为全新会话首次自动触发的证明，也不能据此把回答改善全部归因于技能。七项 0.3 专项案例仍未执行，dsh 的 0.3 行为效果尚待验证。详见[脱敏观察记录](evals/observations-v0.3.md)；旧版测试不作为新版通过证据。
 
 ## 测试与限制
 
@@ -111,9 +117,13 @@ skills/wish-to-action/
   agents/openai.yaml
   references/resource-discovery.md
   references/visual-feedback.md
+  references/domain-orientation.md
+  references/cases.md
+  references/resource-map.md
 evals/
   README.md
   cases.json
+  cases-v0.3.json
 ```
 
 MIT License。方法是在实际需求与使用反馈中整理形成；仓库不包含个人交接文档、私有项目上下文或运行凭据。

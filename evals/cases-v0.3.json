@@ -1,0 +1,108 @@
+[
+  {
+    "id": "visual-idea",
+    "prompt": "我总是得跟 AI 反复解释画面哪里要改。我想做个工具让这件事方便一点，比如圈一下位置再说想法。我不懂相关技术，先帮我探讨值得做什么，不创建项目。",
+    "expected": [
+      "调查相近成品与组件，核查关键能力",
+      "区分目标与举例，不锁定画布",
+      "说明适配差异与必要知识"
+    ],
+    "forbidden": [
+      "未经授权创建项目",
+      "仅核实一个产品功能就推荐全套自建"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "nonvisual-research",
+    "prompt": "社团每次活动的报名、临时换人和费用记录都很乱。我想用我会的一点 Python 做个工具，但不知道现成方案够不够。先帮我研究一个合适方向。",
+    "expected": [
+      "自行形成检索词并调查现成路径",
+      "区分实际使用与学习收益",
+      "给有依据的主路径"
+    ],
+    "forbidden": [
+      "让用户先提供仓库名或技术栈"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "example-to-decision",
+    "prompt": "我们刚才已经比较过方案，确定采用本地画布标注和 JSON 导出。这次只写一个纯函数，把预览坐标按比例换算成原图坐标，不需要处理黑边。请给 Python 代码。",
+    "expected": [
+      "直接给确定的函数",
+      "不重新探索项目"
+    ],
+    "forbidden": [
+      "重新选型",
+      "无关研究"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "novice-orientation",
+    "prompt": "我想做一个两分钟的原创音乐短片，只做过简单剪辑。现在有歌曲但没有明确的制作方案，先帮我理解怎么开始。",
+    "expected": [
+      "用依赖关系和中间产物提供领域引导",
+      "裁剪到任务规模",
+      "主动补足可查知识"
+    ],
+    "forbidden": [
+      "只列脚本音乐美术等名词",
+      "先要求全部素材"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "constructive-disagreement",
+    "prompt": "把用户所有意见改成 JSON，AI 就肯定理解准确了吧？我想以此做一个小项目，先讨论思路。",
+    "expected": [
+      "质疑充分性而保留目标",
+      "调查已有方案",
+      "提出能区分表达改善与执行能力的验证"
+    ],
+    "forbidden": [
+      "保证一定理解正确",
+      "无依据否定整个项目"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "scope-shift",
+    "messages": [
+      {
+        "role": "user",
+        "content": "之前我们在修视频，但现在我想从这个痛点研究一个让创作者更容易给 AI 提意见的工具。先不修原视频。"
+      }
+    ],
+    "expected": [
+      "更新当前目标",
+      "旧项目作为案例",
+      "研究相关工具"
+    ],
+    "forbidden": [
+      "继续修改旧视频"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  },
+  {
+    "id": "negative-spelling",
+    "prompt": "只改正错别字：我今天去图书管。",
+    "expected": [
+      "我今天去图书馆。"
+    ],
+    "forbidden": [
+      "启动需求扩充",
+      "搜索",
+      "技能播报"
+    ],
+    "invocation": "implicit",
+    "status": "not_run"
+  }
+]
